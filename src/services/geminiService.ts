@@ -6,11 +6,13 @@ export class GeminiService {
   private model: string = "gemini-pro";
   
   constructor(apiKey?: string) {
-    this.genAI = new GoogleGenAI(apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I");
+    // Correctly initialize with an object containing apiKey
+    this.genAI = new GoogleGenAI({ apiKey: apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I" });
   }
   
   async generateResponse(prompt: string): Promise<string> {
     try {
+      // Use the correct model access method
       const model = this.genAI.getGenerativeModel({ model: this.model });
       
       const result = await model.generateContent(

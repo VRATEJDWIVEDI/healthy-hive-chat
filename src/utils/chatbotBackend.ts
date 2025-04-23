@@ -9,7 +9,9 @@ const GEMINI_API_KEY = "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I";
 // This is for demonstration purposes only
 export const getGeminiResponse = async (prompt: string): Promise<string> => {
   try {
-    const genAI = new GoogleGenAI(GEMINI_API_KEY);
+    // Correctly initialize with an object containing apiKey
+    const genAI = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+    // Use the correct model access method
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
     const result = await model.generateContent(
