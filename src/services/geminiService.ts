@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 
 export class GeminiService {
   private genAI: GoogleGenAI;
-  private model: string = "gemini-pro";
+  private model: string = "gemini-2.0-flash";
   
   constructor(apiKey?: string) {
     // Correctly initialize with an object containing apiKey

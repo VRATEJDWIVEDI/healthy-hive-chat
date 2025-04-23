@@ -12,7 +12,7 @@ export const getGeminiResponse = async (prompt: string): Promise<string> => {
     // Correctly initialize with an object containing apiKey
     const genAI = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
     // Use the correct model access method
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
     const result = await model.generateContent(
       `You are a helpful health and wellness assistant that provides evidence-based health advice.
