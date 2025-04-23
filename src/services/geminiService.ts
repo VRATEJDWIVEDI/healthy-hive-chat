@@ -1,18 +1,16 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export class GeminiService {
-  private genAI: GoogleGenAI;
-  private model: string = "gemini-2.0-flash";
+  private genAI: GoogleGenerativeAI;
+  private model: string = "gemini-pro";
   
   constructor(apiKey?: string) {
-    // Correctly initialize with an object containing apiKey
-    this.genAI = new GoogleGenAI({ apiKey: apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I" });
+    this.genAI = new GoogleGenerativeAI(apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I");
   }
   
   async generateResponse(prompt: string): Promise<string> {
     try {
-      // Use the correct model access method
       const model = this.genAI.getGenerativeModel({ model: this.model });
       
       const result = await model.generateContent(
@@ -23,7 +21,7 @@ export class GeminiService {
         Respond with helpful, accurate health information. Keep your response under 3 sentences.`
       );
       
-      return result.response.text();
+      return result.text();
     } catch (error) {
       console.error("Error calling Gemini API:", error);
       throw new Error("Failed to generate response");
@@ -31,6 +29,5 @@ export class GeminiService {
   }
 }
 
-// Create a singleton instance
 const geminiService = new GeminiService();
 export default geminiService;

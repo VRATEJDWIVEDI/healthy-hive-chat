@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
@@ -26,18 +25,20 @@ const Navbar = () => {
           </motion.div>
         </div>
         
-        <div className="hidden md:flex items-center gap-6">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            <Link to="/" className="transition-colors hover:text-health-purple">Home</Link>
-            <Link to="/diet" className="transition-colors hover:text-health-purple">Diet</Link>
-            <Link to="/calories" className="transition-colors hover:text-health-purple">Calories</Link>
-            <Link to="/bmi" className="transition-colors hover:text-health-purple">BMI</Link>
-            <Link to="/info" className="transition-colors hover:text-health-purple">Info</Link>
-          </nav>
-          <Button asChild variant="default" className="bg-health-blue hover:bg-health-purple transition-colors">
-            <Link to="/chat">Health Chat</Link>
-          </Button>
-        </div>
+      <div className="hidden md:flex items-center gap-6">
+        <nav className="flex items-center space-x-6 text-sm font-medium">
+          <Link to="/" className="transition-colors hover:text-health-purple">Home</Link>
+          <Link to="/diet" className="transition-colors hover:text-health-purple">Diet</Link>
+          <Link to="/calories" className="transition-colors hover:text-health-purple">Calories</Link>
+          <Link to="/bmi" className="transition-colors hover:text-health-purple">BMI</Link>
+          <Link to="/nutrition" className="transition-colors hover:text-health-purple">Nutrition</Link>
+          <Link to="/exercise" className="transition-colors hover:text-health-purple">Exercise</Link>
+          <Link to="/info" className="transition-colors hover:text-health-purple">Info</Link>
+        </nav>
+        <Button asChild variant="default" className="bg-health-blue hover:bg-health-purple transition-colors">
+          <Link to="/chat">Health Chat</Link>
+        </Button>
+      </div>
 
         <div className="md:hidden">
           <Button 
@@ -76,47 +77,14 @@ const Navbar = () => {
           exit={{ opacity: 0, height: 0 }}
         >
           <div className="container flex flex-col space-y-4">
-            <Link 
-              to="/" 
-              className="px-4 py-2 hover:bg-gray-100 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/diet" 
-              className="px-4 py-2 hover:bg-gray-100 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Diet
-            </Link>
-            <Link 
-              to="/calories" 
-              className="px-4 py-2 hover:bg-gray-100 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Calories
-            </Link>
-            <Link 
-              to="/bmi" 
-              className="px-4 py-2 hover:bg-gray-100 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              BMI
-            </Link>
-            <Link 
-              to="/info" 
-              className="px-4 py-2 hover:bg-gray-100 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Info
-            </Link>
-            <Button 
-              asChild 
-              variant="default" 
-              className="bg-health-blue"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/diet" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Diet</Link>
+            <Link to="/calories" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Calories</Link>
+            <Link to="/bmi" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>BMI</Link>
+            <Link to="/nutrition" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Nutrition</Link>
+            <Link to="/exercise" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Exercise</Link>
+            <Link to="/info" className="px-4 py-2 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>Info</Link>
+            <Button asChild variant="default" className="bg-health-blue" onClick={() => setIsMenuOpen(false)}>
               <Link to="/chat">Health Chat</Link>
             </Button>
           </div>
