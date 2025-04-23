@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import ChatPage from "./pages/ChatPage";
 import BMICalculator from "./pages/BMICalculator";
 import CaloriesCounter from "./pages/CaloriesCounter";
 import Diet from "./pages/Diet";
+import Info from "./pages/Info";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,7 @@ const App = () => (
           <Route path="/bmi" element={<BMICalculator />} />
           <Route path="/calories" element={<CaloriesCounter />} />
           <Route path="/diet" element={<Diet />} />
+          <Route path="/info" element={<Info />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HealthTip from '@/components/HealthTip';
@@ -169,6 +168,72 @@ const Index = () => {
                     <p className="text-gray-800">To improve sleep quality, maintain a consistent sleep schedule, create a relaxing bedtime routine, and ensure your bedroom is dark, quiet, and cool. Limit screen time before bed and avoid caffeine or large meals in the evening. Regular exercise during the day also promotes better sleep at night.</p>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+        
+        {/* New Health Statistics Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Your Health Journey Starts Here
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Track your progress and make informed decisions about your health with our comprehensive tools.
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              <motion.div 
+                className="bg-white rounded-xl shadow-md p-6 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-health-purple mb-2">24/7</p>
+                <p className="text-gray-700">AI Support</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-white rounded-xl shadow-md p-6 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-health-purple mb-2">100+</p>
+                <p className="text-gray-700">Health Tips</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-white rounded-xl shadow-md p-6 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-health-purple mb-2">5K+</p>
+                <p className="text-gray-700">Food Items</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-white rounded-xl shadow-md p-6 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-3xl md:text-4xl font-bold text-health-purple mb-2">10K+</p>
+                <p className="text-gray-700">Users</p>
               </motion.div>
             </div>
           </div>
