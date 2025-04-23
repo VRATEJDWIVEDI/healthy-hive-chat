@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Health theme colors
+				health: {
+					purple: '#9b87f5',
+					blue: '#1EAEDB',
+					green: '#F2FCE2',
+					softPurple: '#E5DEFF',
+					gray: '#8E9196',
+					dark: '#1A1F2C',
+					magenta: '#D946EF',
+					orange: '#F97316',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
