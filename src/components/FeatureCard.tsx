@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -25,10 +24,10 @@ const FeatureCard = ({ icon, title, description, link, delay = 0 }: FeatureCardP
             {icon}
           </div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <p className="text-gray-700 truncate">{description}</p>
         </div>
-        <div className="px-6 py-2 bg-gradient-to-r from-health-purple to-health-blue">
-          <p className="text-white text-right font-medium">Learn more →</p>
+        <div className="px-6 py-2 bg-gradient-to-r from-health-purple to-health-blue text-center">
+          <p className="text-white text-right font-medium text-center" style={{ textAlign: "center" }}>Learn more →</p>
         </div>
       </Link>
     </motion.div>
