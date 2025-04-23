@@ -1,5 +1,5 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/genai";
 
 // DO NOT use this API key in production! This is just for demonstration
 // In a real app, this should be stored securely on the server side using environment variables
@@ -9,7 +9,7 @@ const GEMINI_API_KEY = "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I";
 // This is for demonstration purposes only
 export const getGeminiResponse = async (prompt: string): Promise<string> => {
   try {
-    const genAI = new GoogleGenAI(GEMINI_API_KEY);
+    const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
     const result = await model.generateContent(

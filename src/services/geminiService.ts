@@ -1,12 +1,12 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/genai";
 
 export class GeminiService {
-  private genAI: GoogleGenAI;
+  private genAI: GoogleGenerativeAI;
   private model: string = "gemini-pro";
   
   constructor(apiKey?: string) {
-    this.genAI = new GoogleGenAI(apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I");
+    this.genAI = new GoogleGenerativeAI(apiKey || "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I");
   }
   
   async generateResponse(prompt: string): Promise<string> {
