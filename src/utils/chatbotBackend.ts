@@ -9,8 +9,8 @@ const GEMINI_API_KEY = "AIzaSyCtKx8tYToUejkLQvm_QS-UseS86C5NN0I";
 // This is for demonstration purposes only
 export const getGeminiResponse = async (prompt: string): Promise<string> => {
   try {
-    const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
-    const model = ai.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const genAI = new GoogleGenAI(GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
     const result = await model.generateContent(
       `You are a helpful health and wellness assistant that provides evidence-based health advice.
@@ -19,9 +19,7 @@ export const getGeminiResponse = async (prompt: string): Promise<string> => {
       The user asks: ${prompt}`
     );
     
-    // Get the response text
-    const response = result.response;
-    return response.text();
+    return result.response.text();
     
   } catch (error) {
     console.error("Error calling Gemini API:", error);
