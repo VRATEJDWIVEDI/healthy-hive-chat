@@ -5,7 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import ChatMessage from './ChatMessage';
-import geminiService from '@/services/geminiService';
+
+// This will be replaced with actual API implementation when backend is ready
+const mockGeminiResponse = async (prompt: string): Promise<string> => {
+  // Simulating API call delay
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  const responses = [
+    "Based on nutritional guidelines, I recommend incorporating more leafy greens into your diet for essential vitamins and minerals.",
+    "Regular physical activity combined with balanced nutrition is key to maintaining a healthy weight.",
+    "For optimal health, try to include a variety of colorful vegetables in your meals daily.",
+    "Staying hydrated is crucial for metabolism and overall body function. Aim for 8 glasses of water daily.",
+    "Mindfulness practices can significantly reduce stress levels, which impacts both mental and physical health."
+  ];
+  
+  return responses[Math.floor(Math.random() * responses.length)];
+};
 
 export interface Message {
   id: string;
@@ -50,8 +65,8 @@ const ChatBot = () => {
     setIsLoading(true);
     
     try {
-      // Get response from Gemini API
-      const response = await geminiService.generateResponse(input);
+      // Using mock response for now
+      const response = await mockGeminiResponse(input);
       
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
